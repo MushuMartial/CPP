@@ -1,5 +1,5 @@
-NAME =	phonebook
-SRCS =	main.cpp phonebook.cpp contact.cpp
+NAME =	account
+SRCS =	tests.cpp Account.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
