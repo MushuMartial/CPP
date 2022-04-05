@@ -14,15 +14,15 @@
 #include "Zombie.hpp"
 
 /* Constructor */
-Zombie::Zombie()
+Zombie::Zombie(std::string name)
 {
-	
+	this->setName(name);
 }
 
 /* Destructor */
 Zombie::~Zombie()
 {
-	
+	std::cout << this->_name << "is destroyed." << std::endl;
 }
 
 /* Setters */

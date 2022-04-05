@@ -10,7 +10,7 @@ rm = rm -rf
 all : $(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -fsanitize=address -g -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
