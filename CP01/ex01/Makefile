@@ -1,16 +1,16 @@
-NAME =	phonebook
-SRCS =	main.cpp phonebook.cpp contact.cpp
+NAME =	horde
+SRCS =	main.cpp zombieHorde.cpp Zombie.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 CC = c++
 rm = rm -rf
 
 all : $(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

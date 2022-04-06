@@ -1,16 +1,16 @@
-NAME =	phonebook
-SRCS =	main.cpp phonebook.cpp contact.cpp
+NAME =	zombie
+SRCS =	main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 CC = c++
 rm = rm -rf
 
 all : $(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -fsanitize=address -g -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

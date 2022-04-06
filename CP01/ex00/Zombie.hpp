@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 09:48:50 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/05 16:56:15 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/06 10:39:26 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ class Zombie
 	private:
 		std::string _name;
 		
-		
 };
 
-Zombie* newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie* newZombie( std::string name);
+void randomChump( std::string name);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 09:48:39 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/05 15:53:23 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:06:46 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 int main()
 {
-    Zombie zombie1("zombie1");
-	Zombie *zombie2 = newZombie("zombie2");
-	zombie2->announce();
-	randomChump("zombie3");
-	delete zombie2;
+	std::cout << "randomchump is ";
+	randomChump("zombie_chump");
+	
+	std::cout << "Malloced Zombie is ";
+	Zombie* zombie1 = newZombie("Chad Zombie");
+	
+	delete zombie1;
+	//(void)(zombie1);
+	//system("leaks zombie");
+	return (0);
 }

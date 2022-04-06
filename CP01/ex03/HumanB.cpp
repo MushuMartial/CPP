@@ -1,44 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 09:48:48 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/06 10:49:59 by tmartial         ###   ########.fr       */
+/*   Created: 2022/04/06 11:39:53 by tmartial          #+#    #+#             */
+/*   Updated: 2022/04/06 15:56:15 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 /* Constructor */
-Zombie::Zombie(std::string name)
+HumanB::HumanB(std::string name)
 {
 	this->_name = name;
-	this->announce();
+	//this->_weapon = NULL;
 }
 
 /* Destructor */
-Zombie::~Zombie()
+HumanB::~HumanB()
 {
-	std::cout << this->_name << " is destroyed." << std::endl;
-}
-
-/* Setters */
-void	Zombie::setName(std::string name)
-{
-	this->_name = name;
+	
 }
 
 /* Getters */
-std::string	Zombie::getName()
+std::string HumanB::getName() const
 {
 	return this->_name;
 }
 
-void Zombie::announce()
+/* Setters */
+void	HumanB::setName(std::string name)
 {
-	std::cout << this->_name << ": BrainnnnzzzzZ...." << std::endl;
+	this->_name = name;
+}
+
+void	HumanB::setWeapon(Weapon& weapon)
+{
+	this->_weapon = &weapon;
+}
+
+void	HumanB::attack()
+{
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }

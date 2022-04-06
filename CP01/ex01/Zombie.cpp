@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 09:48:48 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/05 16:56:26 by tmartial         ###   ########.fr       */
+/*   Created: 2022/04/06 11:10:37 by tmartial          #+#    #+#             */
+/*   Updated: 2022/04/06 11:34:16 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 #include "Zombie.hpp"
 
 /* Constructor */
+Zombie::Zombie(std::string name)
+{
+	this->_name = name;
+	this->announce();
+}
+
 Zombie::Zombie()
 {
 	
 }
 
-Zombie::Zombie(std::string name)
-{
-	this->setName(name);
-}
-
 /* Destructor */
 Zombie::~Zombie()
 {
-	std::cout << this->_name << "is destroyed." << std::endl;
+	std::cout << this->_name << " is destroyed." << std::endl;
 }
 
 /* Setters */
