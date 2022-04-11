@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:29:35 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/11 16:35:12 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/11 17:48:17 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,22 @@ class Fixed
 		Fixed(const Fixed& src); //constructor copy
 		~Fixed();
 		
-		// Overload
+		// Operateur affectation
 		Fixed& operator=(const Fixed& rhs);
+
+		// Overload arithmétiques
 		Fixed operator+(const Fixed& rhs);
 		Fixed operator-(const Fixed& rhs);
 		Fixed operator*(const Fixed& rhs);
 		Fixed operator/(const Fixed& rhs);
+
+		// Overload comparaison
+		Fixed operator> (const Fixed& rhs);
+		bool operator< (const Fixed& rhs);
+		Fixed operator>=(const Fixed& rhs);
+		Fixed operator<=(const Fixed& rhs);
+		Fixed operator==(const Fixed& rhs);
+		Fixed operator!=(const Fixed& rhs);
 		
 		// Getter
 		int		getRawBits() const;
