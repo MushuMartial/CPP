@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:29:35 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/11 17:48:17 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/13 11:39:47 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,21 @@ class Fixed
 		Fixed operator/(const Fixed& rhs);
 
 		// Overload comparaison
-		Fixed operator> (const Fixed& rhs);
-		bool operator< (const Fixed& rhs);
-		Fixed operator>=(const Fixed& rhs);
-		Fixed operator<=(const Fixed& rhs);
-		Fixed operator==(const Fixed& rhs);
-		Fixed operator!=(const Fixed& rhs);
+		bool operator> (const Fixed& rhs) const;
+		bool operator< (const Fixed& rhs) const;
+		bool operator>=(const Fixed& rhs) const;
+		bool operator<=(const Fixed& rhs) const;
+		bool operator==(const Fixed& rhs) const;
+		bool operator!=(const Fixed& rhs) const;
 		
+		//prefix operators
+		Fixed& operator++();		
+		Fixed& operator--();
+		
+		//postfix opertors					
+		Fixed operator++(int);				
+		Fixed operator--(int);					
+
 		// Getter
 		int		getRawBits() const;
 
@@ -52,6 +60,10 @@ class Fixed
 		// Functions
 		float	toFloat() const;
 		int		toInt() const;
+		static			Fixed& min(Fixed& a, Fixed& b);
+		static const	Fixed& min(const Fixed& a, const Fixed& b);
+		static			Fixed& max(Fixed& a, Fixed& b);
+		static const	Fixed& max(const Fixed& a, const Fixed& b);
 		
 	private:
 		static int const _fraction = 8;

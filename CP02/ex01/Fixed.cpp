@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:06:26 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/11 16:15:15 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:55:16 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ Fixed::Fixed()
 Fixed::Fixed(int const num)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_fixedValue = (num << Fixed::_fraction);
+	this->_fixedValue = (num * 256);
 }
 
 Fixed::Fixed(float const num)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fixedValue =  int(roundf(num * (1 << Fixed::_fraction)));
+	this->_fixedValue =  int(roundf(num * 256));
 }
 
 Fixed::Fixed(const Fixed& src)
@@ -76,10 +76,10 @@ std::ostream& operator<<(std::ostream& o, const Fixed& rhs)
 /* Functions */
 float	Fixed::toFloat() const
 {
-	return float(this->_fixedValue) / (1 << _fraction);
+	return float(this->_fixedValue) / 256;
 }
 
 int		Fixed::toInt() const
 {
-	return (this->_fixedValue >> _fraction);
+	return (this->_fixedValue / 256);
 }
