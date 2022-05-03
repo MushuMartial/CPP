@@ -1,4 +1,4 @@
-NAME =	Swap
+NAME =	easyfind
 SRCS =	main.cpp
 
 OBJ = $(SRCS:.cpp=.o)

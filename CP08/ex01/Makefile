@@ -1,5 +1,5 @@
-NAME =	Swap
-SRCS =	main.cpp
+NAME =	Span
+SRCS =	main.cpp Span.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
