@@ -6,15 +6,15 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:59:48 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/04 17:48:01 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:02:15 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
 #include <stdlib.h> /* atoi */
-#include "phonebook.hpp"
-#include "contact.hpp"
+#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 void 		print_contact(Contact contact, int index);
 std::string format_str(std::string str);
@@ -132,6 +132,14 @@ int main()
 	{
 		std::cout << "Your input is : ";
 		std::getline(std::cin, input);
+		if (std::cin.eof()==1) {
+			std::cin.clear();
+			std::cin.ignore(100,'\n');
+			input = " ";
+			std::cout << input << std::endl;
+			continue;
+			//break;
+		}
 		if (input == "ADD")
 		{
 			create_contact(&phonebook);
