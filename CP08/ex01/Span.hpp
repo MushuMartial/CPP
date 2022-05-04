@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:43:56 by tmartial          #+#    #+#             */
-/*   Updated: 2022/05/03 17:33:11 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:53:12 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Span
 
 		//Fonction
 		void addNumber(int num);
+		void addNumber2(std::vector<int>::iterator begin,  std::vector<int>::iterator end);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 		
@@ -46,6 +47,15 @@ class Span
 				const char* what() const throw()
 				{
 					return ("Max is reached");
+				}
+		};
+
+		class SizeException : public std::exception
+		{
+			public:
+				const char* what() const throw()
+				{
+					return ("Size is not big enough");
 				}
 		};
 	

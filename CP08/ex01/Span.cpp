@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:44:10 by tmartial          #+#    #+#             */
-/*   Updated: 2022/05/03 17:56:29 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:53:07 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,30 @@ void Span::addNumber(int num)
 		this->_vector.push_back(num);
 }
 
+void Span::addNumber2(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	int distance = std::distance(begin, end);
+	if (distance + this->_vector.size() > this->_max)
+		throw MaxException();
+	else
+		this->_vector.insert(this->_vector.end(), begin, end);
+}
 
 unsigned int Span::longestSpan()
 {
+	if (this->_vector.size() <= 1)
+		throw SizeException();
 	unsigned int min = *std::min_element(this->_vector.begin(), this->_vector.end());
 	unsigned int max = *std::max_element(this->_vector.begin(), this->_vector.end());
-	return (max - min);
+	return (max + ~min+1);
 }
 
 unsigned int Span::shortestSpan()
 {
+	if (this->_vector.size() <= 1)
+		throw SizeException();
 	unsigned int result[this->_vector.size()];
+	std::sort(this->_vector.begin(), this->_vector.end());
 	std::adjacent_difference(this->_vector.begin(), this->_vector.end(), result);
 	unsigned int min = *std::min_element(result, result + this->_vector.size());
 	return (min);
