@@ -132,7 +132,8 @@ int main()
 	{
 		std::cout << "Your input is : ";
 		std::getline(std::cin, input);
-		if (std::cin.eof()==1) {
+		if (std::cin.eof() == 1) 
+		{
 			std::cin.clear();
 			std::cin.ignore(100,'\n');
 			input = " ";
