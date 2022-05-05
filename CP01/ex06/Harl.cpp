@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   harl.cpp                                           :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:47:31 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/07 19:15:11 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/08 12:55:46 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void Harl::complain(std::string level)
 	void (Harl::*array_ptr[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     for (i = 0; i < 4; i++)
     {
-        if (!levels[i].compare(level))
+        if (levels[i].compare(level) == 0)
 			break;
     }
 	switch (i)

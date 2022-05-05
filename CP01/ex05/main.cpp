@@ -6,7 +6,7 @@
 /*   By: tmartial <tmartial@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 16:25:59 by tmartial          #+#    #+#             */
-/*   Updated: 2022/04/07 18:36:33 by tmartial         ###   ########.fr       */
+/*   Updated: 2022/04/08 12:57:22 by tmartial         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int main()
 	Karen.complain("INFO");
 	Karen.complain("WARNING");
 	Karen.complain("ERROR");
+	
 	return (0);
 }
