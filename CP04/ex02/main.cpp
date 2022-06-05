@@ -18,8 +18,6 @@
 
 int main()
 {
-	// Deep copy    : AAnimal* meta = new AAnimal();
-	// Shallow copy : AAnimal* meta(new AAnimal());
 	std::cout << std::endl << "----- My Test -----" << std::endl;
 	{
 		//AAnimal meta = new AAnimal(); //Does not work abstract
