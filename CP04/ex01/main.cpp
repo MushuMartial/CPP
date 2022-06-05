@@ -18,8 +18,6 @@
 
 int main()
 {
-	// Deep copy    : Animal* meta = new Animal();
-	// Shallow copy : Animal* meta(new Animal());
 	std::cout << "----- PDF Test -----" << std::endl;
 	{
 		const Animal* meta = new Animal();
